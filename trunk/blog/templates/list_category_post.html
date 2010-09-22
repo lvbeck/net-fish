@@ -1,0 +1,8 @@
+{% extends "list_post_base.html" %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+
+{% block navigator %}
+<a href="/">&nbsp;全部</a> &gt; {{ category.name }}
+{% endblock %}

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@media screen, projection
+{
+  #header, #page_margins { background: #F35F11; }
+  #main { background: #FFF395; } 
+  #nav_main {
+    background: #c0c0c0 url("../../../images/glossy/orange/nav.png") repeat center right;
+  }
+
+  #nav_main ul li { border-right: 1px #FDB24C solid; }
+
+  #nav_main ul li a,
+  #nav_main ul li strong {
+    color: #fff;
+  }
+
+  #nav_main ul li:hover  {
+    background: #FFF395;
+  }
+
+  #nav_main ul li.current {
+    /* (en) Repeat the main color from the image */
+    /* (de) Wiederholung der Hauptfarbe aus der Bilddatei */
+    background: #FFF395;
+  }
+ 
+  #nav_main ul li.current strong,
+  #nav_main ul li.current a,
+  #nav_main ul li.current a:focus,
+  #nav_main ul li.current a:hover,
+  #nav_main ul li.current a:active { background: transparent; color: #F35F11; text-decoration: none; }
+  
+  
+  button, input[type="button"], input[type="submit"]{ 
+    background-image:url("../../../images/glossy/orange/button.png");
+    color: #fff;
+  }
+
+  button:hover, input[type="button"]:hover, input[type="submit"]:hover { 
+    background-image:url("../../../images/glossy/orange/button_hover.png");
+  }
+}
