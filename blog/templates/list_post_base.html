@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load markup %}
+{% load paginator %}
+
+{% block meta %}
+<meta name="keyword" content="community, blog, 新闻, 技术, 八卦" />
+<meta name="description" content="牛逼是一个社区博客网站。" />
+{% endblock %}
+{% block content %}
+{% for post in object_list %}
+
+<!--{% block navigator %}{% endblock %}-->
+<div class="post" id="post_{{post.key.id}}">
+    <div class="post_header">        
+        <div class="title">
+            <a href="/post/{{post.key.id}}">
+                {{ post.title }}{% if post.is_published %}{%else%}(未发布){%endif%}
+            </a>    
+        </div>
+            <p/>
+        <div class="subtitle">           
+            <span class="tag icon">
+                标签:
+                {% for tag in post.tags %}
+                    <a href="/tag/{{tag.tag.name}}/">{{tag.tag.name}}</a>
+                {%endfor%}
+            </span>
+            &nbsp;       
+            <span class="category icon">
+                类别: <a href="/category/{{ post.category.key.id }}/">{{ post.category.name }}</a>
+            </span>
+        </div>
+    </div>            
+    <div class="post_content">
+        {{ post.content|markdown }}
+    </div>
+    <div class="post_footer">
+        <div class="info">
+            <a href="mailto:{{post.author.email}}">{{ post.author.nickname }}</a> 写于 {{ post.create_time|date:"Y-M-d H:i" }}
+        </div>    
+        <div class="action">
+            <span>
+                <a class="comment icon" href="/post/{{ post.key.id }}/#comments">评论</a>({{ post.comment_count }})
+            </span>
+            <span>
+                <a class="read icon" href="/post/{{ post.key.id }}/">阅读</a>({{ post.read_count }})
+            </span>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% paginator %}
+{% endblock %}

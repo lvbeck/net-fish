@@ -1,0 +1,322 @@
+@charset "UTF-8";
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+ *
+ * (en) Uniform design of standard content elements
+ * (de) Einheitliche Standardformatierungen für die wichtigten Inhalts-Elemente
+ *
+ * @copyright       Copyright 2005-2008, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.0.6
+ * @revision        $Revision: 138 $
+ * @lastmodified    $Date: 2007-11-19 21:05:33 +0100 (Mo, 19 Nov 2007) $
+ * @appdef yaml
+ */
+
+@media all
+{
+  /**
+   * Fonts
+   * (en) font-family and font-size selection for headings and standard text elements
+   * (de) Zeichensatz und Schriftgrößen für Überschriften und übliche Text-Elemente
+   *
+   * @section content-fonts
+   */
+
+  /* (en) reset font size for all elements to standard (16 Pixel) */
+  /* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
+  html * { font-size: 100.01% }
+  
+  /* (en) reset monospaced elements to font size 16px in Gecko browsers */
+  /* (de) Schriftgröße von monospaced Elemente auf 16 Pixel setzen */
+  textarea, pre, tt, code {
+    font-family:"Courier New", Courier, monospace;  	
+  }
+
+  /* (en) base layout gets standard font size 12px */
+  /* (de) Basis-Layout erhält Standardschriftgröße von 12 Pixeln */
+  body {
+    font-family: Tahoma,"Lucida Grande",Arial,Verdana,sans-serif;
+    font-size: 75.00%; 
+    color: #444;
+    min-height: 380px;
+  }
+
+  p { line-height: 1.5em; margin: 0 0 1em 0; }
+
+  h1,h2,h3,h4,h5,h6 { 
+    font-family:"times new roman",times,serif; 
+    font-weight:bold; 
+    color:#666;
+    margin: 0 0 0.25em 0; 
+  }
+
+  h1 { font-size: 200% }                        /* 24px */
+  h2 { font-size: 200%; color:#182E7A}          /* 24px */
+  h3 { font-size: 150% }                        /* 18px */
+  h4 { font-size: 133.33% }                     /* 16px */
+  h5 { font-size: 116.67% }                     /* 14px */
+  h6 { font-size: 116.67%; font-style:italic }  /* 14px */
+
+  #header h1 {
+    font-size:2.5em;
+    letter-spacing:-2px;
+    line-height:65%;
+    color:#000;
+  }
+
+  #header span {
+    color:#999;
+  }
+
+  #header #logo a {
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    font-family:inherit;
+    font-size:32px;
+    color:white;
+  }
+  
+  #header #teaser {
+    position:absolute;
+    top: 28px;
+    right: 0px;
+    color:#ddd;
+  } 
+  
+  #col3_content { padding: 10px 0 0 0; }
+
+  #main { margin: 0 0; }
+	
+  #switches, #searchbox, #friendconnect {
+	text-align: center;
+  }
+
+  #switches {
+    padding: 0px;
+    margin: 10px 0 10px 0;  
+  }
+  
+  #searchbox {
+    padding: 0 15px 0 15px;
+  }
+
+  #friendconnect {
+	padding: 0 10px 0 10px;
+  }
+  
+  #paginator {
+    text-align: right;
+    padding: 5px;
+  }
+
+  #footer { border-top: lightgray solid 1px; }
+  
+  #q {  
+    width: 75%; 
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    -moz-border-radius-bottomleft: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    float: left;
+  }
+
+  #q:hover {
+    border: 1px solid #999;	
+  }
+
+  /* ### Lists | Listen  #### */
+
+  ul, ol, dl { line-height: 1.5em; margin: 0 0 1em 1em }
+  li { margin-left: 1.5em; line-height: 1.5em }
+  #switches ul { margin: 0 0 1em 0; }
+  #switches li { display: inline; margin: 1px; list-style-type: none; }
+  #switches li img { border: transparent solid 1px; }
+  #switches li.current img { border: gray solid 1px; }
+  dt { font-weight: bold }
+  dd { margin: 0 0 1em 2em }
+
+  /* ### text formatting | Textauszeichnung ### */
+
+  cite { font-style:italic }
+  blockquote { background-image:url(../../images/bg/metal4.png); color:black; border:gray solid 1px; padding: 10px; }
+
+  strong,b { font-weight: bold }
+  em,i { font-style:italic }
+
+  pre, code { font-family: monospace; font-size: 1.1em; background-color: #FAFAFA; border: 1px solid #BBBBBB; padding: 0px 10px; }
+
+  acronym, abbr {
+    letter-spacing: .07em;
+    border-bottom: .1em dashed #c00;
+    cursor: help;
+  }
+
+  /**
+   * Generic Content Classes
+   * (en) standard classes for positioning and highlighting
+   * (de) Standardklassen zur Positionierung und Hervorhebung
+   *
+   * @section content-generic-classes
+   */
+
+  .note {background: #dfd; padding: 1em; border-top: 1px #bdb dotted; border-bottom: 1px #bdb dotted;}
+  .important {background: #ffd; padding: 1em; border-top: 1px #ddb dotted; border-bottom: 1px #ddb dotted;}
+  .warning {background: #fdd; padding: 1em; border-top: 1px #dbb dotted; border-bottom: 1px #dbb dotted;}
+
+  .float_left { float: left; display:inline; margin-right: 1em; margin-bottom: 0.15em;  }
+  .float_right { float: right; display:inline; margin-left: 1em; margin-bottom: 0.15em;  }
+  .center { text-align:center; margin: 0.5em auto }
+  .action { text-align: right; position:relative; top:-12px; }
+  .comment_header { padding-top: 20px; height: 15px; }
+  .small_font { font-size: 11px; }
+  .title > a{ font-size: 1.5em; font-weight: bold; font-family: "Trebuchet MS",Verdana,Arial,sans-serif; }
+  .subtitle, .post_content { font-family: "Trebuchet MS","Lucida Console","Lucida Sans"; }
+  .gadgets-gadget-container { text-align:center; }
+  
+  /**
+   * Hyperlinks
+   *
+   * (en) Formatting of hyperlinks
+   * (de) Gestaltung von Hyperlinks
+   *
+   */
+
+  a {color: black; text-decoration:none;}
+  a:focus,
+  a:hover,
+  a:active {color:#182E7A; text-decoration:underline;}
+  
+  .subtitle a, .post_content a { background: transparent url(../../images/bg/dotline.png) repeat-x scroll center bottom; }
+  .subtitle a:focus, a:hover, a:active, .post_content a:focus, a:hover, a:active { background: transparent none repeat scroll 0 0 }
+  
+  #topnav a { color: #ddd; font-weight: normal; }
+  #topnav a:focus, 
+  #topnav a:hover,
+  #topnav a:active { color: white; text-decoration:underline; }
+  
+  #footer a { color: #999; font-weight: bold;}
+  #footer a:focus, 
+  #footer a:hover,
+  #footer a:active {color: #4D87C7; text-decoration:underline;}
+
+  /**
+   * (en) Emphasizing external Hyperlinks via CSS
+   * (de) Hervorhebung externer Hyperlinks mit CSS
+   *
+   * @section             content-external-links
+   * @app-yaml-default    disabled
+   */
+  #main_x a[href^="http:"], #main_x a[href^="https:"] {
+    color: #444;
+    font-weight:bold;
+    background: transparent url(../../images/icons/16x16/world_link.png) no-repeat scroll left center;
+    padding: 2px 0 2px 18px;
+  }
+  
+  /**
+   * (en) Classified Hyperlinks via CSS
+   * (de) klassifiziert Hyperlinks mit CSS
+   *
+   * @section             classifiedlinks
+   * @app-yaml-default    disabled
+   */
+  a.link { background: transparent url(../../images/icons/16x16/link.png) no-repeat scroll left center; padding-bottom:2px; }
+  a.edit { background: transparent url(../../images/icons/16x16/pencil.png) no-repeat scroll left center; }
+  a.comment { background: transparent url(../../images/icons/16x16/comments.png) no-repeat scroll left center; padding-bottom:2px; }
+  a.comment_add { background: transparent url(../../images/icons/16x16/comment_add.png) no-repeat scroll left center;padding-bottom:1px; color:#444;}
+  a.printer { background: transparent url(../../images/icons/16x16/printer.png) no-repeat scroll left center;padding-top:1px; padding-bottom:1px; }
+  a.read { background: transparent url(../../images/icons/16x16/page_white_magnify.png) no-repeat scroll left center;padding-bottom:2px; }
+  a.delete { background: transparent url(../../images/icons/16x16/delete.png) no-repeat scroll left center; }
+  a.reply { background: transparent url(../../images/icons/16x16/comment.png) no-repeat scroll left center; }
+  a.account { background: transparent url(../../images/icons/16x16/status_online.png) no-repeat scroll left center; padding-bottom:3px; }
+  a.post_add { background: transparent url(../../images/icons/16x16/page_add.png) no-repeat scroll left center; padding-top:2px; padding-bottom:1px; }
+  a.category_add { background: transparent url(../../images/icons/16x16/folder_add.png) no-repeat scroll left center; padding-bottom:1px; }
+  a.login { background: transparent url(../../images/icons/16x16/key.png) no-repeat scroll left center; padding-top:2px; padding-bottom:2px; }
+  a.logout { background: transparent url(../../images/icons/16x16/key_go.png) no-repeat scroll left center; padding-top:2px; padding-bottom:2px;}
+  a.contact { background: transparent url(../../images/icons/16x16/email.png) no-repeat scroll left center; padding-bottom:2px; }
+  a.subscribe { background: transparent url(../../images/icons/16x16/feed.png) no-repeat scroll left center; padding-top:2px; padding-bottom:2px; }  
+  a.world_link { background: transparent url(../../images/icons/16x16/world_link.png) no-repeat scroll left center; padding-top:2px; padding-bottom:2px; }
+  a.sitemap { background: transparent url(../../images/icons/16x16/sitemap_color.png) no-repeat scroll left center; padding-top:1px; padding-bottom:1px; } 
+  a.sa { background: transparent url(../../images/icons/16x16/sa.png) no-repeat scroll left center; padding-bottom:2px; } 
+  a.heart { background: transparent url(../../images/icons/16x16/heart.png) no-repeat scroll left center; }
+  a.setting { background: transparent url(../../images/icons/16x16/wrench.png) no-repeat scroll left center; padding-top:2px; padding-bottom:2px; }
+  /**
+   * Tables | Tabellen
+   * (en) Generic classes for table-width and design definition
+   * (de) Generische Klassen für die Tabellenbreite und Gestaltungsvorschriften für Tabellen
+   *
+   * @section content-tables
+   */
+
+  table { width: auto; border-collapse:collapse; margin-bottom: 0.5em; }
+  table.full { width: 100%; }
+  table.fixed { table-layout:fixed }
+
+  th,td { padding: 0.5em; }
+  thead th { background: #444; color: #fff }
+  tbody th { background: #ccc; color: #333 }
+  tbody th.sub { background: #ddd; color: #333 }
+  
+  /**
+   * Miscellaneous | Sonstiges
+   *
+   * @section content-misc
+   */
+
+  hr {
+    color: #fff;
+    background:transparent;
+    margin: 0 0 0.5em 0;
+    padding: 0 0 0.5em 0;
+    border:0;
+    border-bottom: 1px #eee solid;
+  }
+  
+  /**
+   * Div, Span and blockquote
+   *
+   * @section content-misc
+   */    
+  div.post { padding:10px; }
+  div.post, div.block { border: #ddd solid 1px; margin:15px; background: white;}
+  div.block p.ui-accordion-header { border-bottom: solid #ddd 1px; text-align:center; }
+  div.block pre.profile { text-align:left; }
+  div.post_content { padding-top: 10px; }
+  div.friendfeed.widget { border: 0;}
+  blockquote.comment { margin-right: 30px; margin: 5px; }  
+  span.icon, a.icon { padding-left: 22px; }
+  span.tag { background: transparent url(../../images/icons/16x16/tag_blue.png) no-repeat scroll left center; padding-bottom:2px; }
+  span.category { background: transparent url(../../images/icons/16x16/folder.png) no-repeat scroll left center; }
+  #col1 div.block p { text-align: center; }
+  #searchcontrol .gsc-control { width:100%; }
+  #searchcontrol form { padding:0; width:100%; }
+  /**
+   * Form and Inputs
+   *
+   * @section content-misc
+   */  
+  form { padding:10px; }
+  form[name="search"]{ padding:0; }
+  input[type="text"]{ height:16px; width:85%; padding:3px 0pt 0pt 5px; }
+  input[type="text"]:hover{ background-color: #FFFADB; }
+  input[type="textarea"]{ width:100%; }
+  form textarea { width:75%; }
+  button, input[type="button"], input[type="submit"]{ 
+    border: 1px solid #5A5A5A;
+    height: 21px;
+    padding: 2px;
+    font-weight: bold;
+    -moz-border-radius-bottomleft: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+  }
+}
